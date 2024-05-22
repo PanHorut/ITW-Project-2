@@ -1,0 +1,1146 @@
+/* STYLE of WEBSITE */
+/* author: Dominik Horut (xhorut01) */
+
+/** General styles **/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("../img/side-wave_background.png");
+
+    background-color: #EAF8BF;
+    max-width: 100%;
+    
+
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+section .section-content{
+    width: 1200px;
+    max-width: 100%;
+    margin: 50px 0px;
+}
+
+h2{
+    font-family: "Bebas Neue", sans-serif;   
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 60px;
+    color: #ECA400;
+}
+
+p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+}
+
+i{
+    transition: color 0.2s ease-in-out;
+}
+/*********************/
+
+/* NAVBAR */ 
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    padding: 15px;
+    position: fixed;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 4;
+}
+
+/* standard horizontal navigation bar*/ 
+header ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+a#logo, a#logo:hover{
+    border-bottom: 2px solid transparent; 
+    display: flex;
+    align-items: center;
+}
+
+header nav a{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    color: #000;
+    margin: 0px 15px;
+    border-bottom: 2px solid transparent; 
+    
+}
+
+header a:hover{
+    border-bottom: 2px solid #000; 
+}
+
+header h1{
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+}
+
+header img{
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header span{
+    color: #ECA400;
+}
+
+/* hamburger icon, which is later used in smaller screen width */
+#hamburger{
+    font-size: 58px;
+    display:none;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/**********/ 
+
+/* Landing page */
+section#intro{
+
+    /* adjusting bg to look better */
+    background-position: -400px;
+
+    /* Layout of landing text */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100vh;
+    max-width: 100%;
+}
+
+section#intro h1{
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: 6px;
+    font-size: 60px;
+    
+}
+
+section#intro h1#hey{
+    font-family: "Sedgwick Ave", cursive;
+    font-size: 160px;
+}
+
+section#intro h1#iam{
+    font-size: 120px;
+}
+
+section#intro span{
+    color: #27476E;
+}
+
+section#intro .section-content{
+    margin: 0px 0px 0px 350px;
+    max-width: 580px;
+}
+
+/*************/ 
+
+/** About **/
+
+section#about .section-content{
+    background-color: #EAF8BF;
+    border: 10px solid #001D4A;
+}
+
+/* Layout of About section for bigger screen widths */
+section#about #introduction{
+    padding: 50px;
+    display: grid;
+    grid-template-areas: "heading image"
+                         "text image";
+    justify-content: center;
+}   
+
+section#about p{
+    grid-area: text;
+    color: #000;
+    width: 475px;
+    text-align: justify;
+}
+
+section#about img{
+    grid-area: image;
+    width: 350px;
+    height: auto;
+}
+
+section#about h2{
+    grid-area: heading;
+    text-align: center;
+}
+/***********/
+
+/** Timeline */
+section#timeline .section-content{
+    background-color: #001D4A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+
+}
+
+#line{
+    /* Layout of single dots (their containers) */
+    display: flex;
+    flex-direction: column;
+}
+
+.dot-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 210px;
+    width: 500px;
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    background-color: #EAF8BF;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.dot-container .dot::before{
+    font-weight: 800;
+    font-size: 24px;
+    font-family: "Roboto Mono", monospace;
+    color: #ECA400;
+    position: relative;
+    right: 100px;
+    bottom: 4px;
+}
+
+.dot-container p{
+    font-family: "Roboto Mono", monospace;
+    color: #EAF8BF;
+}
+
+.dot-container img{
+    position: relative;
+    bottom: -110px;
+    left: 4px;
+}
+
+.dot-container .dot::after {
+    display: inline-block;
+    position: relative;
+    width:350px; /* Set the width as needed */
+    font-family: "Roboto Mono", monospace;
+    color: #EAF8BF;
+    font-size: 18px;
+    bottom: 32px;
+    left: 75px;
+}
+
+/* Text is attached to dots using pseudoelements for cleaner html */
+.dot-container:nth-child(1) .dot::before{
+    content: "2018";
+}
+
+.dot-container:nth-child(2) .dot::before{
+    content: "2020";
+}
+
+.dot-container:nth-child(3) .dot::before{
+    content: "2022";
+}
+
+.dot-container:nth-child(4) .dot::before{
+    content: "2024";
+}
+
+.dot-container:nth-child(1) .dot::after{
+    content: "<!-- coded my first website -->";
+}
+
+.dot-container:nth-child(2) .dot::after{
+    content: "// first java app programmed";
+}
+
+.dot-container:nth-child(3) .dot::after{
+    content: "/** entered BUT FIT";
+}
+
+.dot-container:nth-child(4) .dot::after{
+    content: "# finishing 2nd year at uni";
+}
+
+.dot-container p.milestone{
+    position: relative;
+    left: 225px;
+}
+
+.dot-pulse {
+    border-radius: 30px;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    
+}
+
+.dot-container:hover .dot-pulse {
+    border: 3px solid #EAF8BF;
+    animation: pulsate 1.3s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.0;
+}
+
+/* Pulsing effect when hovering over dot container */
+@keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+/* Skills */
+
+section#skills h2{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    grid-area: heading;
+}
+
+section#skills .skill{
+    border: 6px solid #001D4A;
+    border-radius: 20px;
+    background-color: #EAF8BF;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#skills h3{
+    font-family: "Open Sans", sans-serif;
+    font-size: 26px;
+    margin: 10px 0px;
+}
+
+section#skills i{
+    color:#27476E;
+    font-size: 72px;
+}
+
+section#skills .rating i{
+    font-size: 32px;
+    color:#ECA400;
+    margin-top: 5px;
+}
+
+/* trigger for showing skills */
+.roll{
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    grid-area: arrow;
+    cursor: pointer;
+}
+
+section#skills .roll i{
+    color: #ECA400;
+}
+
+/* Soft skills */
+
+/* Rolled up layout */
+#soft-skills{
+    display: grid;
+    grid-template-areas: "heading"
+                         "arrow"
+                         "list";
+}
+
+/* Rolled down layout */
+#soft-skills.roll-down{
+    grid-template-areas: "heading"
+                         "list"
+                         "arrow";
+}
+
+#soft-skills.roll-down .skill-list{
+    display: grid;
+}
+
+#soft-skills div.skill{
+    width: 350px;
+}
+
+/* Soft skills layout */
+#soft-skills .skill-list{
+    justify-content: center;
+
+    /* layout of soft skills for bigger screen widths */
+    grid-template-areas: "comm emote"
+                         "collab time";
+    row-gap: 50px;
+    column-gap: 100px;
+    padding: 50px;
+    background-color: #EAF8BF;
+    border: 6px solid #000;
+    grid-area: list;
+    display: none;
+
+}
+
+#soft-skills .skill:nth-child(1){
+    grid-area: "comm";
+}
+
+#soft-skills .skill:nth-child(2){
+    grid-area: "emote";
+}
+
+#soft-skills .skill:nth-child(3){
+    grid-area: "collab";
+}
+
+#soft-skills .skill:nth-child(4){
+    grid-area: "time";
+}
+
+/* Hard skills */
+
+/* Rolled up layout */
+#hard-skills{
+    display: grid;
+    grid-template-areas: "heading"
+                         "arrow"
+                         "list";
+}
+
+/* Rolled down layout */
+#hard-skills.roll-down{
+    grid-template-areas: "heading"
+                         "list"
+                         "arrow";
+}
+
+#hard-skills.roll-down .skill-list{
+    display: grid;
+}
+
+.rotate-arrow{
+    transform: rotate(180deg);
+}
+
+#hard-skills .skill-list{
+    justify-content: center;
+    background-color: #EAF8BF;
+
+    /* layout of hard skills for bigger screen widths */
+    grid-template-areas: "cpp py linux"
+                         "git java php";
+    row-gap: 50px;
+    column-gap: 50px;
+    padding: 50px;
+    border: 6px solid #000;
+    grid-area: list;
+    display: none;
+                
+}
+
+#hard-skills div.skill{
+    width: 250px;
+}
+
+#hard-skills .skill:nth-child(1){
+    grid-area: py;
+}
+
+#hard-skills .skill:nth-child(2){
+    grid-area: php;
+}
+
+#hard-skills .skill:nth-child(3){
+    grid-area: cpp;
+}
+
+#hard-skills .skill:nth-child(4){
+    grid-area: java;
+}
+
+#hard-skills .skill:nth-child(5){
+    grid-area: linux;
+}
+
+#hard-skills .skill:nth-child(6){
+    grid-area: git;
+}
+
+
+/**********/
+
+/* Hobbies */
+section#hobbies{
+    height: 950px;
+}
+
+section#hobbies h2{
+    text-align: center;
+}
+
+section#hobbies .section-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#hobbies .section-content h2{
+    background-color: #EAF8BF;
+    border: 6px solid #ECA400;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+section#hobbies div.hobby{
+    width: 400px;
+    height: 400px;
+}
+
+/* For bigger screen widths hobbies are next to each other horizontally */
+#hobby-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section#hobbies .pic{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    z-index: 2;
+}
+
+section#hobbies img{
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    transition: filter 1.5s ease-out;
+}
+
+section#hobbies .paragraph{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAF8BF;
+    position: absolute;
+    transition: transform 1.25s ease-in-out;
+    z-index: 1;
+    transform: translateY(-400px);
+}
+
+section#hobbies .paragraph h3{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 5px;
+    color:#ECA400;
+}
+
+section#hobbies .paragraph p{
+    padding: 15px;
+    text-align: center;
+}
+
+/* Button to show hobby description */
+section#hobbies .click-me{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 100px;
+    left: 100px;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+    font-size: 40px;
+    color: #27476E;
+    background-color: #EAF8BF;
+    border: 6px solid #27476E;
+    letter-spacing: 3px;
+    cursor: pointer;
+    display: flex;
+    z-index: 3;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+section#hobbies .click-me:hover{
+    color:#EAF8BF;
+    background-color: #27476E;
+}
+
+/* Button to hide hobby description */
+section#hobbies .back{
+    width: 200px;
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 35px;
+    position: relative;
+    color: #000;
+    border: 6px solid #ECA400;
+    letter-spacing: 3px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transition: background-color 0.2s ease-in-out;
+}
+
+section#hobbies .back:hover{
+    background-color: #ECA400;
+}
+
+section#hobbies .show-paragraph{
+    position: relative;
+    transform: translateY(0px); 
+}
+
+/***********/
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #ECA400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Layout for bigger screen sizes */
+footer .section-content{
+    display: grid;
+    grid-template-areas: 'logo nav email soc'
+                         'copy nav email soc';
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #ECA400;
+}
+
+footer h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+
+footer #img, footer #structure, footer ul, footer #socials, footer #contact{
+    height: 150px;
+    margin-top: 10px;
+}
+
+footer img{
+    width: 120px;
+    height: auto; 
+}
+
+footer #img{
+    grid-area: logo;
+    width: 120px;
+    height: 74px;
+}
+
+footer #copyright{
+    grid-area: copy;
+    display: flex;
+    align-items: center;
+}
+
+footer #copyright i{
+    color:#001D4A;
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+
+footer #structure{
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+}
+
+
+footer #structure a{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: #000;
+    padding: 0px 5px;
+    border-left: 2px solid transparent;
+
+}
+
+footer #structure a:hover{
+    border-left: 2px solid #000;
+}
+
+footer #socials{
+    grid-area: soc;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+footer #socials i{
+    color:#EAF8BF;
+    font-size: 40px;
+    margin: 5px 5px 0px 0px;
+}
+
+footer #socials i:hover{
+    color:#001D4A;
+}
+
+footer #socials a{
+    color: transparent;
+}
+
+footer #contact{
+    grid-area: email;
+}
+
+footer #send-email{
+    border-bottom: 4px solid #001D4A;
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 66% 34%;
+}
+
+footer #send-email input#email:focus{
+    outline: none;
+}
+
+#send-email input::placeholder {
+    color: #000;
+    
+}
+
+footer #send-email #submit{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+    border-top: 4px solid transparent;
+    cursor: pointer;
+    visibility: visible;
+}
+
+footer #send-email #submit::after{
+    visibility: hidden;
+    
+}
+
+footer #send-email #submit:hover{
+    color:#001D4A;
+    border-top: 4px solid #001D4A;
+}
+
+footer input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color:#000;
+    background-color: #ECA400;
+    margin: 0;
+    padding: 0;
+}
+/**********/
+
+/* Responsive */ 
+@media only screen and (max-width: 1300px){
+
+    /* Hobbies are put vertically and hobbies section height is increased */
+    section#hobbies{
+        height: 3100px;
+    }
+
+    section#hobbies .click-me{
+        left: 200px;
+    }
+
+    #hobby-list{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 300px;
+    }
+
+    /* Every hobby is bigger to fill more empty space */
+    section#hobbies .pic, section#hobbies div.hobby{
+        width: 600px;
+        height: 600px;
+    }
+
+    section#hobbies .paragraph{
+        width: 600px;
+    }
+
+    div#hobby-list{
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+
+    /* Hard skills now have rows by 2 skills instead of 3*/
+    #hard-skills .skill-list{
+    grid-template-areas: "cpp py" 
+                         "linux git"
+                         "java php";          
+    }
+
+    section#intro .section-content{
+        margin: 0;
+    }
+
+    /* Landing page layout is changed to fit better */
+    section#intro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 950px){
+
+    /* Landing page layout is changed to fit better */
+    section#about #introduction{
+       
+        grid-template-areas: "heading"
+                             "image"
+                             "text";
+        justify-content: center;
+        align-items: center;
+    }   
+
+    section#about img{
+        position: relative;
+        left:60px;
+        margin-bottom: 20px;
+    }
+
+    #soft-skills .skill-list{
+        column-gap: 50px;
+    }
+
+    /* Footer layout is changed to fit to 950px */
+    footer .section-content{
+        grid-template-areas: 'nav email'
+                             'logo soc'
+                             'copy soc';
+    }
+
+    footer{
+        height: 335px;
+    }
+}
+
+@media only screen and (max-width: 850px){
+
+    /* Descriptions in timeline are shortened to fit into page */
+    .dot-container .dot::after{
+        width: 150px;
+    }
+
+    .dot-container:nth-child(1) .dot::after{
+        content: "web dev";
+    }
+    
+    .dot-container:nth-child(2) .dot::after{
+        content: "java";
+    }
+    
+    .dot-container:nth-child(3) .dot::after{
+        content: "BUT FIT";
+    }
+    
+    .dot-container:nth-child(4) .dot::after{
+        content: "2nd year at FIT";
+    }
+
+    header nav a, header h1, header span{
+        display: none;
+    }
+
+    /* Soft skills layout is changed to display only one skill in row */
+    #soft-skills .skill-list{
+    grid-template-areas: none;
+    grid-template-rows: repeat(1fr, 4);
+    }
+
+    header{
+        justify-content: space-between;
+    }
+
+    /* Change of navigation bar style - transformed to hamburger menu */
+    #hamburger{
+        display: flex;
+        justify-self: flex-end;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+
+    /* Each hobby is resized to fit into page */
+    section#hobbies{
+        height: 2400px;
+    }
+
+    section#hobbies .click-me{
+        left: 100px;
+    }
+
+    #hobby-list{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 300px;
+    }
+
+    section#hobbies .pic, section#hobbies div.hobby{
+        width: 400px;
+        height: 400px;
+    }
+
+    section#hobbies .paragraph, div#hobby-list{
+        width: 400px;
+    }
+
+    /* Landing page text is resized to fit better */
+    section#intro .section-content{
+        text-align: center;
+        width: 300px;
+    }
+
+    section#intro h1{
+        font-size: 36px;
+    } 
+
+    section#intro h1#hey{
+        font-size: 100px;
+    } 
+
+    section#intro h1#iam{
+        font-size: 48px;
+    } 
+
+    /* Each hard skill is displayed is one row */
+    #hard-skills .skill-list{
+        grid-template-areas: "cpp"
+                             "py" 
+                             "linux" 
+                             "git"
+                             "java"
+                             "php";            
+    }
+
+    section#hobbies{
+        margin-bottom: 200px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+
+
+    section#about p{
+        width: 350px;
+    }
+
+    section#about img{
+       
+        left:0px;
+     
+    }
+
+    .dot-container {
+        width: 350px;
+    }
+
+    #soft-skills .skill-list{
+        padding: 20px;
+    }
+
+    /* Send email in footer section changing ratio of email field and send button*/
+    footer #send-email{
+        grid-template-columns: 80% 20%;
+    }
+
+    /* Instead of SUBMIT, icon is displayed */
+    footer #send-email #submit{
+        visibility: hidden;
+    }
+
+    footer #send-email #submit::after{
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f1d8";
+        position: relative;
+        right: 40px;
+        margin-right: 10px;
+        visibility: visible;
+    }
+
+}
+
+@media only screen and (max-width: 410px){
+
+    /* Each hobby is resized to fit */
+    section#hobbies{
+        height: 2100px;
+    }
+
+    section#hobbies .click-me{
+        left: 50px;
+    }
+
+    #hobby-list{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 300px;
+    }
+
+    section#hobbies .pic, section#hobbies div.hobby{
+        width: 300px;
+        height: 300px;
+    }
+
+    section#hobbies .paragraph, div#hobby-list{
+        width: 300px;
+    }
+
+    section#hobbies .paragraph{
+       top: 0;
+    }
+
+    #soft-skills div.skill{
+        width: 340px;
+    }
+
+    #soft-skills .skill-list{
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .dot-container .dot::after{
+        width: 120px;
+    }
+}
+/**************/
+
+/* Hamburger menu */
+
+.hamburger-menu{
+    display: none;
+    height: 200px;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 6px solid #ECA400;
+}
+
+.hamburger-list{
+    display: flex;
+    flex-direction: column;
+    background-color: #EAF8BF;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+ 
+}
+
+.hamburger-list a{
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 38px;
+    margin: 0;
+}
+
+.hamburger-list a:hover{
+    border: none;
+}
+
+.show-hamburger{
+    display: flex;
+}
+
+.bar-animation{
+    transform: rotate(90deg);
+}
+
+/******************/
+
+/* Thank note */
+.thank-note{
+    height: 200px;
+    padding: 5px;
+    width: 375px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%; 
+    text-align: center;
+    transform: translateY(500px);
+    
+    
+    transition: transform 0.5s ease-out;
+    z-index: 6;
+    background-color: #EAF8BF;
+    border: 8px solid #001D4A;
+    
+}
+
+#address{
+    font-weight: 900;
+}
+
+.show-thank-note{
+    transform: translateY(100px);
+}
